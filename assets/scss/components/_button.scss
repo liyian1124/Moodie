@@ -1,0 +1,13 @@
+.btn-KV {
+  background: linear-gradient(90deg, #7007e7, #347dfd);
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+  &:active {
+  background: 
+  radial-gradient(ellipse at bottom, rgba(#c6a6eb,1) 0, rgba(#c6a6eb,0.5) 15%, rgba($white, 0) 30%),
+  linear-gradient(90deg, #7007e7, #347dfd);
+  color: $white;
+  }
+}
