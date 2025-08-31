@@ -170,3 +170,6 @@ document.querySelectorAll('.myCoverflow .swiper-slide').forEach(slide=>{
     </p>`;
   slide.appendChild(overlay);
 });
+
+
+
