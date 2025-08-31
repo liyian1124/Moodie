@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>影片播放頁-直式 電影版（興奮）</title>
-    <script type="module" crossorigin src="/Moodie/assets/main-BjUNQ3NN.js"></script>
-    <link rel="stylesheet" crossorigin href="/Moodie/assets/main-NpWos1_Y.css">
+    <title>影片播放頁-直式播放頁-播放狀態（興奮）</title>
+    <script type="module" crossorigin src="/Moodie/assets/main-8aO_LlEN.js"></script>
+    <link rel="stylesheet" crossorigin href="/Moodie/assets/main-CeQdGvd_.css">
   </head>
   <body>
     <header class="header d-flex justify-content-between text-white">
@@ -20,115 +20,127 @@
     <!-- Content -->
     <main>
         <div class="bg-dark">
-            <!-- Banner -->
-            <div class="banner position-relative banner-border-radious">
-                
-                <img src="/Moodie/assets/Movie-Excite-1-b1uW4PeJ.jpg" alt="芭比 (Spirit in the Alley)" class="img-fluid mb-8">
-                <div>
-                    <button type="button" class="close-button" width="48px"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6%2018L18%206M18%2018L6%206'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="close-button"></button>
+            <!-- 影片 -->
+            <section>
+                <div class="d-flex justify-content-between pt-59">
+                    <button type="button"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.99997%208L4.70708%2011.2929C4.31655%2011.6834%204.31655%2012.3166%204.70708%2012.7071L7.99997%2016M4.99997%2012L19%2012'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="back-icon" class="p-12"></button>
+                    <h1 class="h5 text-white py-11-5">
+                        影片播放頁
+                    </h1>
+                    <span class="fake-icon">　</span>
                 </div>
-                <div>
-                    <button type="button" class="play-button position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button"></button>
-                </div>
-                <span class="emotion-tag">85%興奮</span>
+            
+                <img src="/Moodie/assets/Excite-1-DvVdssA1.jpg" alt="main-video-play" class="main-video-play">
+                <input type="range" min="0" max="100" value="0" class="timeline">
+            </section>
+
+            
+            <div class="container">
+                <section class="mb-3 my-3">
+                    <h2 class="h5 text-white mb-12">
+                        請問您對於此片有什麼感受？
+                    </h2>
+                    
+                    <div class="d-flex justify-content-between emo-active">
+                        <div class="emo-card">
+                            <button type="button"><img src="/Moodie/assets/Surprise-CTlix94U.svg" alt="興奮" class="mb-1"></button>
+                            <div>
+                                <span class="text-white ">興奮</span>
+                            </div>
+                        </div>
+
+                        <div class="emo-card">
+                            <button type="button"><img src="/Moodie/assets/Serentiny-Cm2y0XUX.svg" alt="平和" class="mb-1"></button>
+                            <div>
+                                <span class="text-white ">平和</span>
+                            </div>
+                        </div>
+
+                        <div class="emo-card">
+                            <button type="button"><img src="/Moodie/assets/Grief-LYvH85nl.svg" alt="悲傷" class="mb-1"></button>
+                            <div>
+                                <span class="text-white ">悲傷</span>
+                            </div>
+                        </div>
+
+                        <div class="emo-card">
+                            <button type="button"><img src="/Moodie/assets/Rage-BVYSZS8w.svg" alt="恐懼" class="mb-1 ml-6"></button>
+                            <div>
+                                <span class="text-white ">恐懼</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2 class="h5 text-white py-11-5 mb-12">
+                        類似影片
+                    </h2>
+
+                    <div class="video-card-horizontal d-flex mb-12">
+                        <div class="position-relative">
+                            <a href="#"><img src="/Moodie/assets/Video-happy-0-CCBdYg7b.jpg" alt="五星主廚快餐車"></a>
+                            <!-- 缺圖 -->
+                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button-xs"></button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <a href="#" class="text-md mb-1">五星主廚快餐車</a>
+                            <p class="text-xs">喜劇</p>
+                        </div>   
+                    </div>
+
+                    <div class="video-card-horizontal d-flex mb-12">
+                        <div class="position-relative">
+                            <a href="#"><img src="/Moodie/assets/Video-happy-3-RvzKPlNz.jpg" alt="寵物當家2"></a>
+                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button-xs"></button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <a href="#" class="text-md mb-1">寵物當家2</a>
+                            <p class="text-xs">喜劇</p>
+                        </div>   
+                    </div>
+
+                    <div class="video-card-horizontal d-flex mb-12">
+                        <div class="position-relative">
+                            <a href="#"><img src="/Moodie/assets/Video-happy-1-B5ZY3ao7.jpg" alt="高年級實習生"></a>
+                            <!-- 缺圖 -->
+                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button-xs"></button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <a href="#" class="text-md mb-1">高年級實習生</a>
+                            <p class="text-xs">喜劇</p>
+                        </div>   
+                    </div>
+
+                    <div class="video-card-horizontal d-flex mb-12">
+                        <div class="position-relative">
+                            <a href="#"><img src="/Moodie/assets/Video-happy-4-l4Wf28gB.jpg" alt="活個精彩"></a>
+                            <!-- 缺圖 -->
+                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button-xs"></button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <a href="#" class="text-md mb-1">活個精彩</a>
+                            <p class="text-xs">喜劇</p>
+                        </div>   
+                    </div>
+
+                    <div class="video-card-horizontal d-flex pb-6">
+                        <div class="position-relative">
+                            <a href="#"><img src="/Moodie/assets/Video-happy-5-CeRzWRXn.jpg" alt="樂來樂愛你"></a>
+                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.00234%2012.0004C8.00234%2010.2557%208.00469%208.51097%208%206.76511C8%206.47676%208.04685%206.21882%208.33615%206.07014C8.61374%205.92822%208.85737%206.02171%209.10099%206.17264C11.9202%207.9185%2014.743%209.66099%2017.5634%2011.4057C18.1455%2011.7662%2018.1455%2012.2336%2017.5634%2012.5929C14.743%2014.3376%2011.9214%2016.0801%209.10099%2017.826C8.85854%2017.9758%208.61374%2018.0727%208.33615%2017.9307C8.04802%2017.7821%208%2017.5253%208%2017.2358C8.00469%2015.491%208.00234%2013.7463%208.00234%2012.0004Z'%20fill='white'/%3e%3c/svg%3e" alt="play-button-xs"></button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <a href="#" class="text-md mb-1">樂來樂愛你</a>
+                            <p class="text-xs">音樂歌劇</p>
+                        </div>   
+                    </div>
+                </section>
             </div>
 
-            <div class="container">
-                <!-- Movie-Intro -->
-                <section class="text-xs text-white d-flex">
-                    <div class="d-flex align-items-center">    
-                        <span class="status-tag me-2">0+</span>
-                        <span class="me-2">95%契合</span>
-                        <div class="d-flex">
-                            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10.9718%202.70846C11.4382%201.93348%2012.5618%201.93348%2013.0282%202.70847L15.3586%206.58087C15.5262%206.85928%2015.7995%207.05784%2016.116%207.13116L20.5191%208.15091C21.4002%208.35499%2021.7474%209.42356%2021.1545%2010.1066L18.1918%2013.5196C17.9788%2013.765%2017.8744%2014.0863%2017.9025%2014.41L18.2932%2018.9127C18.3714%2019.8138%2017.4625%2020.4742%2016.6296%2020.1214L12.4681%2018.3583C12.1689%2018.2316%2011.8311%2018.2316%2011.5319%2018.3583L7.37038%2020.1214C6.53754%2020.4742%205.62856%2019.8138%205.70677%2018.9127L6.09754%2014.41C6.12563%2014.0863%206.02124%2013.765%205.80823%2013.5196L2.8455%2010.1066C2.25257%209.42356%202.59977%208.35499%203.48095%208.15091L7.88397%207.13116C8.20053%207.05784%208.47383%206.85928%208.64138%206.58087L10.9718%202.70846Z'%20stroke='%23E7E7E7'%20stroke-width='1.5'/%3e%3c/svg%3e" width="16px" alt="Star-Icon" class="align-bottom">
-                            <span>6.8</span>
-                        </div>
-                    </div>
-                    <div class="ms-auto">
-                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8%208L6%208C3.79086%208%202%209.79086%202%2012L2%2017C2%2019.2091%203.79086%2021%206%2021L18%2021C20.2091%2021%2022%2019.2091%2022%2017L22%2012C22%209.79086%2020.2091%208%2018%208L16%208'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3cpath%20d='M9%2013L11.2929%2015.2929C11.6834%2015.6834%2012.3166%2015.6834%2012.7071%2015.2929L15%2013'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3cpath%20d='M12%2015L12%203'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="Download-Icon" class="p-12">
-                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%2019V12M12%2012V5M12%2012H19M12%2012H5'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="Plus-Icon" class="p-12 mx-2">
-                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.7232%202.75895C20.6613%202.44624%2021.5538%203.33873%2021.2411%204.27684L16.1845%2019.4467C15.8561%2020.4318%2014.5163%2020.5631%2014.0029%2019.6603L10.9078%2014.2172C10.6409%2013.7478%2010.2522%2013.3591%209.78283%2013.0922L4.33973%209.99712C3.437%209.4838%203.56824%208.14394%204.55342%207.81555L19.7232%202.75895Z'%20stroke='white'%20stroke-width='1.5'/%3e%3cpath%20d='M12.7858%2011.2144L10.7858%2013.2144'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="Send-Icon" class="p-12">
-                    </div>
-                </section>
-                
-                <section>
-                    <h1 class="h4 text-white mb-8">芭比 (Spirit in the Alley)</h1>
-                    <div class="text-xs text-neutral-300 mb-8">    
-                        <span class="bg-tag px-2">2022</span>
-                        <span class="mx-2">114分鐘</span>
-                        <span>奇幻冒險．歡樂喜劇</span>
-                    </div>
-                    <p class="text-xs text-white mb-8">生活在芭比樂園，就是身處一個完美地方過著完美的人生，除非你遇到全面性的存在危機，或者你剛好是肯尼。</p>
-                </section>
-
-                <!-- 演員與導演資訊 -->
-                <section class="mb-8">   
-                    <h2 class="h5 text-white py-11-5 mb-8">演員與導演資訊</h2>
-                    <div class="mb-8">    
-                        <span class="text-xs text-neutral-300 me-2">導演</span>
-                        <span class="text-xs text-neutral-300">葛莉塔潔薇</span>
-                    </div>
-                    <div class="d-flex overflow-auto">
-                        <div class="actor-card text-center">
-                            <img src="/Moodie/assets/Excite-1-D1K1YmNo.jpg" class="card-img-top" alt="瑪格羅比">
-                            <div>
-                                <h4 class="h5">瑪格羅比</h4>
-                                <h5 class="h6 text-neutral-300">芭比</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <img src="/Moodie/assets/Excite-2-CrHVPOkM.jpg" class="card-img-top" alt="伊莎蕾">
-                            <div>
-                                <h4 class="h5">伊莎蕾</h4>
-                                <h5 class="h6 text-neutral-300">芭比</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <img src="/Moodie/assets/Excite-3-BBr3xipO.jpg" class="card-img-top" alt="萊恩葛斯林">
-                            <div>
-                                <h4 class="h5">萊恩葛斯林</h4>
-                                <h5 class="h6 text-neutral-300">肯尼</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <img src="/Moodie/assets/Excite-4-Ib2ztJjI.jpg" class="card-img-top" alt="劉思慕">
-                            <div>
-                                <h4 class="h5">劉思慕</h4>
-                                <h5 class="h6 text-neutral-300">肯尼</h5>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 類似影片 -->
-                <section>    
-                    <h2 class="h5 text-white py-11-5">類似影片</h2>
-                    <div class="d-flex flex-nowrap overflow-auto pb-40">
-                        <div class="video-card">
-                            <img src="/Moodie/assets/Movie-Excite-12-DoC0D6_B.jpg" class="card-img-top" alt="類似影片1">
-                        </div>
-                        
-                        <div class="video-card">
-                            <img src="/Moodie/assets/Movie-Excite-3-EmAbK44v.jpg" class="card-img-top" alt="類似影片2">
-                        </div>
-                        
-                        <div class="video-card">
-                            <img src="/Moodie/assets/Movie-Excite-11-CDzCn4pW.jpg" class="card-img-top" alt="類似影片3">
-                        </div>
-                        
-                        <div class="video-card">
-                            <img src="/Moodie/assets/Movie-Excite-10-B-l-1IyH.jpg" class="card-img-top" alt="類似影片4">
-                        </div>
-                        
-                    </div>
-                </section>
             
-            </div>  
+             
         </div>
-        
     </main>
 
     
