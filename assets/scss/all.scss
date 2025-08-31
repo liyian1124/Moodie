@@ -1,10 +1,23 @@
-@import "../../node_modules/bootstrap/scss/functions";
+/* 引入字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+/* 引用 Material Icons */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+/* 引用 bootstrap */
+@import "bootstrap/scss/functions";
 @import './utils/variables';
-@import "../../node_modules/bootstrap";
+@import "bootstrap";
 
-@import "./components/button";
 
-@import './layout/header.scss';
-@import './layout/footer.scss';
+@import "bootstrap/scss/utilities/api";
 
-@import './pages/index.scss';
+// base
+@import "components/glass-nav";
+@import "components/swiper-gallery-modal";
+// components
+
+// layout
+@import './layout/header';
+@import './layout/footer';
+
+// pages
+@import "./pages/index";

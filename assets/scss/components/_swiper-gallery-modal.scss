@@ -1,0 +1,339 @@
+// ===== Swiper + Scrollable BG + Modal (namespaced) =====
+$z-bg: 0;
+$z-stage: 1;
+$z-modal: 9999;
+$radius: 12px;
+$wrap-max-w: 980px;
+$modal-max-w: 920px;
+$shadow-modal: 0 10px 30px rgba(0,0,0,.25);
+
+@mixin hide-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar { display: none; }
+  scrollbar-width: none;
+}
+
+.gallery-page {
+  // 背景：可直向滾動長圖（捲軸隱藏）
+  .bg-scroll {
+    position: fixed; inset: 0;
+    overflow-y: auto; z-index: $z-bg;
+    @include hide-scrollbar;
+
+    img { display: block; width: 100%; height: auto; }
+  }
+
+  // 前景舞台（放 Swiper）
+  .stage {
+    position: relative; z-index: $z-stage;
+    min-height: 100vh;
+    display: flex; align-items: start; justify-content: center;
+    padding: 48px 6px;
+
+    &__wrap { width: min($wrap-max-w, 92vw); margin: 0 auto; }
+  }
+
+  // 幻燈片影像效果（灰階套在 img，iOS 較穩）
+  .slide-img {
+    width: 321px; height: 480px; object-fit: cover; display: block;
+    border-radius: $radius;
+    transition: filter .3s, opacity .3s, transform .3s;
+    filter: grayscale(100%); opacity: .6;
+    backface-visibility: hidden; transform: translateZ(0);
+  }
+
+  .myCoverflow {
+    .swiper-slide-active .slide-img,
+    .swiper-slide-duplicate-active .slide-img {
+      filter: none; opacity: 1; transform: scale(1.03);
+    }
+  }
+
+  // Modal（內容可 y 軸滾）
+  .modal {
+    position: fixed; inset: 0; display: none; z-index: $z-modal;
+
+    &.is-open { display: block; }
+
+    &__backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(2px);
+    }
+    &__dialog {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: min($modal-max-w, 92vw);
+      background: #fff; border-radius: $radius; box-shadow: $shadow-modal;
+      padding: 20px 24px 24px; max-height: 86vh;
+      display: flex; flex-direction: column;
+    }
+    &__title { margin: 0 36px 8px 0; font-size: 20px; }
+    &__body  { margin-top: 8px; overflow-y: auto; max-height: 80vh; @include hide-scrollbar; }
+    &__close { position: absolute; right: 10px; top: 8px; font-size: 28px; line-height: 1; border: 0; background: transparent; cursor: pointer; padding: 6px 10px; }
+  }
+
+  #modalImg { width: 100%; height: auto; border-radius: 8px; display: block; margin-bottom: 12px; }
+
+  @media (max-width: 576px) {
+    .modal {
+      &__dialog { width: 94vw; padding: 16px 16px 20px; }
+      &__title  { font-size: 18px; }
+    }
+  }
+}
+
+
+/* --- TOP10 徽章 --- */
+.gallery-page {
+  .swiper-slide { position: relative; }            /* 給定位參考點 */
+  .slide-img    { position: relative; z-index: 1; }/* 確保徽章能蓋在圖上 */
+
+  /* 給被標記的 slide 顯示徽章：用 data-top10 或 data-rank 都可 */
+  .swiper-slide[data-top10],
+  .swiper-slide[data-rank] {
+    &::before{
+      content: attr(data-rank);                    /* 有數字就顯示數字 */
+      /* 若只想顯示固定文字，改為 content: "TOP 10"; */
+      position: absolute; top: 10px; right: -10px;
+      z-index: 2;
+      padding: 6px 25px;
+      font-size: 12px; font-weight: 800; letter-spacing: .5px;
+      color: #fff; text-transform: uppercase;
+      border-radius: 8px;
+      background: #F0B000;
+      pointer-events: none;
+    }
+  }
+
+  /* 想統一顯示 "TOP 10" 兩個字（不顯示數字），保留這段覆蓋即可 */
+  .swiper-slide[data-top10]::before { content: "TOP 10"; }
+}
+
+
+.gallery-page {
+  .swiper-slide { position: relative; border-radius: 16px; overflow: hidden; }
+  .slide-img    { display:block; width:100%; height: 420px; object-fit: cover; }
+
+  /* 底部資訊條 */
+  .slide-overlay{
+    position:absolute; left:0; right:0; bottom:0;
+    padding: 14px 16px 16px; color:#fff; pointer-events:none; /* 點擊不阻擋 */
+    /* 漸層底 */
+    &::before{
+      content:""; position:absolute; inset:0; top:auto; height: 55%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.85) 100%);
+      z-index:-1;
+    }
+  }
+  .slide-title{ margin:0 0 8px; font-size:20px; font-weight:800; letter-spacing:.5px; }
+  .slide-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:6px; }
+  .pill{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:4px 8px; font-size:12px; font-weight:700;
+    background: rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    i{ font-size:14px; line-height:1; }
+  }
+  .slide-tags{ margin:0; font-size:12px; opacity:.95; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .match { font-weight:800; margin-right:6px; }
+}
+
+
+/* ===== 黑底細節 Modal ===== */
+.modal--dark .modal__dialog{
+  background:#0b0b0f; color:#fff; padding:0;
+  width:min(560px, 100vw); max-height:100vh; overflow:hidden;
+  border-radius:16px;
+}
+.modal--dark .modal__backdrop{ background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+
+/* Hero 區 */
+.detail-hero{ position:relative; }
+.detail-hero__img{
+  width:100%; display:block; aspect-ratio: 16/9; object-fit: cover;
+}
+.detail-hero__grad{
+  position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.85) 100%);
+}
+.detail-hero__play{
+  position:absolute; left:50%; top:50%; transform: translate(-50%, -50%);
+  width:56px; height:56px; border-radius:50%;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.9); color:#000; border:0; cursor:pointer;
+}
+.detail-hero__match{
+  position:absolute; right:12px; bottom:12px;
+  background: linear-gradient(180deg,#ffc83a,#ffb000); color:#fff;
+  font-weight:800; font-size:12px; padding:6px 10px; border-radius:8px;
+}
+.modal__close{
+  position:absolute; right:10px; top:10px; z-index:2;
+  width:36px; height:36px; border-radius:50%;
+  border:0; background: rgba(0,0,0,.5); color:#fff; font-size:20px; cursor:pointer;
+}
+
+/* 內容區 */
+.detail-body{ padding:16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+.detail-title{ margin:6px 0 8px; font-size:20px; font-weight:800; }
+.detail-sub{ margin:0 0 12px; opacity:.9; }
+.meta-pills{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.pill{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px; font-size:12px; font-weight:700;
+  background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;
+}
+.tags{ margin:0 0 12px; font-size:12px; opacity:.95; }
+.match{ font-weight:800; margin-right:6px; }
+
+.actions{ display:flex; gap:10px; margin:12px 0 16px; }
+.btn-icon{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; font-size:14px; border-radius:10px; border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06); color:#fff; cursor:pointer;
+}
+
+/* 段落與清單 */
+.section{ margin-top:12px; }
+.section-title{ margin:0 0 10px; font-size:14px; opacity:.9; }
+.hlist{ display:flex; gap:12px; overflow-x:auto; padding-bottom:6px; -webkit-overflow-scrolling:touch; }
+.hlist::-webkit-scrollbar{ display:none; }
+
+.person-card{ width:88px; flex:0 0 auto; text-align:center; }
+.person-card .avatar{ width:88px; height:88px; object-fit:cover; border-radius:12px; display:block; }
+.person-card .name{ margin-top:6px; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; opacity:.95; }
+.person-card .role{ font-size:11px; opacity:.7; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.movie-card{ width:110px; flex:0 0 auto; }
+.movie-card .poster{ width:110px; aspect-ratio: 2/3; object-fit:cover; border-radius:10px; display:block; }
+.movie-card .mtitle{ margin-top:6px; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; opacity:.95; }
+
+    .modal{ display:none; }
+.modal.is-open{ display:block; }
+
+
+:root{ --nav-h: 80px; } // 你的底部導覽高度，可依實際調整
+
+.gallery-page {
+  /* 讓 stage 底部留空，不會被底部導覽與 CTA 壓到 */
+  .stage{
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--nav-h) + 88px); // 48 按鈕高 + 邊距
+  }
+
+  .cta-bar{
+    width: min(980px, 92vw);
+    margin: 16px auto 0;
+    display: flex; gap: 12px;
+  }
+
+  .btn{
+    flex: 1 1 0;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 14px; font-weight: 800;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid transparent; cursor: pointer;
+    user-select: none; -webkit-tap-highlight-color: transparent;
+    transition: transform .05s ease, filter .15s ease;
+    &:active{ transform: translateY(1px); }
+  }
+  .btn--ghost{
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.18);
+  }
+  .btn--primary{
+    color: #fff; border: 0;
+    background: linear-gradient(90deg, #6A5CFF, #3182FF);
+    box-shadow: 0 6px 16px rgba(49,130,255,.35);
+  }
+}
+
+/* 卡片底部說明 Overlay */
+.gallery-page{
+  .swiper-slide{ position: relative; border-radius:16px; overflow: hidden; }
+  .slide-img{ display:block; width:100%; height:420px; object-fit:cover; position:relative; z-index:1; }
+
+  .slide-overlay{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:14px 16px 16px; color:#fff; pointer-events:none; /* 不擋點擊 */
+    &::before{
+      content:""; position:absolute; inset:0; top:auto; height:56%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.88) 100%);
+      z-index:-1;
+    }
+  }
+  .slide-title{ margin:0 0 8px; font-size:20px; font-weight:800; letter-spacing:.5px; }
+  .slide-meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+  .pill{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:4px 8px; font-size:12px; font-weight:700;
+    background: rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    i{ font-size:14px; line-height:1; }
+  }
+  .slide-tags{ margin:0; font-size:12px; opacity:.95; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .match{ font-weight:800; margin-right:6px; }
+}
+
+.gallery-page {
+  .slide-overlay{
+    position: absolute; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    padding: 14px 16px 16px;
+    color: #fff;
+    pointer-events: none;
+    isolation: isolate;                       // 確保偽元素在文字下、圖片上
+    background: rgba(20,20,24,0.1);           // 微透明底色提高可讀性
+
+    /* 文字可讀性黑色漸層(可保留/可調淡) */
+    &::before{
+      content: "";
+      position: absolute; inset: 0; top: auto; height: 56%;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,.40) 60%,
+        rgba(0,0,0,.80) 100%
+      );
+      z-index: -1;
+    }
+
+    /* ⭐ 底部→上緣 漸層模糊；到邊線前淡出至 0 */
+    --blur: 5px;       /* 模糊強度 */
+    --fade: 30px;       /* 最上緣漸層清除帶的高度（調這個控制「到線前」漸淡的距離） */
+
+    &::after{
+      content: "";
+      position: absolute; inset: 0;
+      z-index: -1;
+      background: rgba(0,0,0,0.001);          // 觸發 Safari 的 backdrop
+      -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+      backdrop-filter: blur(var(--blur)) saturate(120%);
+
+      /* 底部100%模糊 → 逐漸在最上緣 var(--fade) 高度內清除到 0
+         （方向 to top = 從底往上）*/
+      -webkit-mask-image: linear-gradient(
+        to top,
+        rgba(0,0,0,1) 0%,                                   /* 底部完整模糊 */
+        rgba(0,0,0,1) calc(100% - var(--fade)),            /* 一直到上緣前都保持 */
+        rgba(0,0,0,0) 100%                                 /* 線處完全清除 */
+      );
+      mask-image: linear-gradient(
+        to top,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) calc(100% - var(--fade)),
+        rgba(0,0,0,0) 100%
+      );
+      pointer-events: none;
+    }
+  }
+
+  /* Fallback：不支援 backdrop-filter 時用較深的底色 */
+  @supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+    .slide-overlay{ background: rgba(0,0,0,.42); }
+    .slide-overlay::after{ display: none; }
+  }
+}
