@@ -33,7 +33,7 @@ export default defineConfig({
   ],
   server: {
     // 啟動 server 時預設開啟的頁面
-    open: 'pages/index.html',
+    open: 'pages/movie_info/barbie-info.html',
   },
   build: {
     rollupOptions: {
@@ -52,3 +52,5 @@ export default defineConfig({
     outDir: 'dist',
   },
 });
+
+
