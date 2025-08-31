@@ -1,0 +1,63 @@
+// ---- Glass Nav (mobile bottom bar) ----
+$glass-bg: rgba(255, 255, 255, .10);
+$glass-bg-fallback: rgba(255, 255, 255, .16);
+$glass-blur: 12px;
+$glass-radius: 20px;
+$glass-border: rgba(255, 255, 255, .20);
+$glass-shadow: 0 8px 20px rgba(0, 0, 0, .6);
+$nav-max-w: 500px;
+
+@mixin glass($bg: $glass-bg, $blur: $glass-blur, $border: $glass-border, $shadow: $glass-shadow){
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+  box-shadow: $shadow;
+}
+
+/* 固定在底部；若不想固定，把 position/bottom/left/transform 刪掉 */
+.glass-nav{
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: clamp(260px, 90vw, $nav-max-w);
+  padding: 12px 0;
+  border-radius: $glass-radius;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+
+  @include glass();
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+    background: $glass-bg-fallback;
+  }
+}
+
+.glass-nav__item{
+  flex: 1 1 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  text-align: center;
+  font-size: 13px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color .3s ease;
+
+  i{ font-size: 20px; line-height: 1; } // Bootstrap Icons
+
+  &:hover{ color: #ffcc70; }
+  &[aria-current="page"], &.is-active{ font-weight: 700; }
+}
+
+/* 可複用的頁面背景（選用） */
+.bg-purple-blue{ background: linear-gradient(to right, #7007E7, #347DFD); }
