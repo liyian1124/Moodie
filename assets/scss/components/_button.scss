@@ -11,3 +11,15 @@
   color: $white;
   }
 }
+.btn-gray {
+  background: rgba($white, 0.2);
+  color: $white;
+  &:hover {
+    background: rgba($white, 0.4);
+    color: $white;
+  }
+  &:active {
+    background: rgba($white, 0.4);
+    color: $white;
+  }
+}

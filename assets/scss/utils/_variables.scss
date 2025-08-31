@@ -335,6 +335,7 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
+  "neutral-300": $neutral-300
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -433,6 +434,7 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
+  6: $spacer * 0.75,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -454,7 +456,10 @@ $position-values: (
 
 $body-text-align:           null !default;
 $body-color:                $gray-900 !default;
+$body-color-white:          $white !default;
+
 $body-bg:                   $white !default;
+$body-bg-transparent:       rgba($white, 0) !default;
 
 $body-secondary-color:      rgba($body-color, .75) !default;
 $body-secondary-bg:         $gray-200 !default;
@@ -490,7 +495,8 @@ $icon-link-icon-transform:    translate3d(.25em, 0, 0) !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+// $paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   0rem !default;
 
 
 // Grid breakpoints
@@ -622,7 +628,9 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$font-family-sans-serif:      "Noto Sans", "Roboto", sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -669,7 +677,8 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+// $headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      0 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
@@ -809,7 +818,8 @@ $table-variants: (
 $input-btn-padding-y:         .75rem !default; //調整為12px
 // $input-btn-padding-x:         .75rem !default;
 $input-btn-padding-x:         1.5rem !default; //條整為24px
-$input-btn-font-family:       null !default;
+// $input-btn-font-family:       null !default;
+$input-btn-font-family:      $font-family-sans-serif  !default;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
 
@@ -918,13 +928,16 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              var(--#{$prefix}body-bg) !default;
+// $input-bg:                              var(--#{$prefix}body-bg) !default;
+$input-bg:                              $body-bg-transparent !default;
 $input-disabled-color:                  null !default;
 $input-disabled-bg:                     var(--#{$prefix}secondary-bg) !default;
 $input-disabled-border-color:           null !default;
 
-$input-color:                           var(--#{$prefix}body-color) !default;
-$input-border-color:                    var(--#{$prefix}border-color) !default;
+// $input-color:                           var(--#{$prefix}body-color) !default;
+$input-color:                           $white !default;
+// $input-border-color:                    var(--#{$prefix}border-color) !default;
+$input-border-color:                    $body-bg-transparent !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      var(--#{$prefix}box-shadow-inset) !default;
 
@@ -933,12 +946,14 @@ $input-border-radius-sm:                var(--#{$prefix}border-radius-sm) !defau
 $input-border-radius-lg:                var(--#{$prefix}border-radius-lg) !default;
 
 $input-focus-bg:                        $input-bg !default;
-$input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
+// $input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
+$input-focus-border-color:              $purple !default;
 $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               var(--#{$prefix}secondary-color) !default;
+// $input-placeholder-color:               var(--#{$prefix}secondary-color) !default;
+$input-placeholder-color:               $neutral-400 !default;
 $input-plaintext-color:                 var(--#{$prefix}body-color) !default;
 
 $input-height-border:                   calc(#{$input-border-width} * 2) !default; // stylelint-disable-line function-disallowed-list

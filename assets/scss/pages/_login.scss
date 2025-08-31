@@ -1,0 +1,17 @@
+.wrap {
+  max-width: 1150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bg-image {
+  background-image: url(/assets/images/page-login/background.jpg);
+  max-height: 100%;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.b-bottom {
+  border-bottom: 1px solid $neutral-400;
+}
