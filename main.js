@@ -5,4 +5,4 @@ console.log('Hello world');
 
 
 const BASE = import.meta.env.BASE_URL; // dev: '/', prod: '/Moodie/'
-link.href = BASE + 'pages/barbie-info.html';
+link.href = BASE + 'pages/recom-excit.html';
