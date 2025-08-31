@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <script type="module" crossorigin src="/Moodie/assets/main-8aO_LlEN.js"></script>
-    <link rel="stylesheet" crossorigin href="/Moodie/assets/main-CeQdGvd_.css">
+    <script type="module" crossorigin src="/Moodie/assets/main-CUOnw25_.js"></script>
+    <link rel="stylesheet" crossorigin href="/Moodie/assets/main-DTnGVxLD.css">
   </head>
   <body>
-    <header class="header d-flex justify-content-between text-white">
-    <span class="py-22">9:41</span>
-    <div class="header-icon d-flex align-items-center">    
-        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='white'%20class='bi%20bi-reception-4'%20viewBox='0%200%2016%2016'%3e%3cpath%20d='M0%2011.5a.5.5%200%200%201%20.5-.5h2a.5.5%200%200%201%20.5.5v2a.5.5%200%200%201-.5.5h-2a.5.5%200%200%201-.5-.5zm4-3a.5.5%200%200%201%20.5-.5h2a.5.5%200%200%201%20.5.5v5a.5.5%200%200%201-.5.5h-2a.5.5%200%200%201-.5-.5zm4-3a.5.5%200%200%201%20.5-.5h2a.5.5%200%200%201%20.5.5v8a.5.5%200%200%201-.5.5h-2a.5.5%200%200%201-.5-.5zm4-3a.5.5%200%200%201%20.5-.5h2a.5.5%200%200%201%20.5.5v11a.5.5%200%200%201-.5.5h-2a.5.5%200%200%201-.5-.5z'/%3e%3c/svg%3e" alt="Signal-icon" style="width: 25px; height: 20px;">
-        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='white'%20class='bi%20bi-wifi'%20viewBox='0%200%2016%2016'%3e%3cpath%20d='M15.384%206.115a.485.485%200%200%200-.047-.736A12.44%2012.44%200%200%200%208%203C5.259%203%202.723%203.882.663%205.379a.485.485%200%200%200-.048.736.52.52%200%200%200%20.668.05A11.45%2011.45%200%200%201%208%204c2.507%200%204.827.802%206.716%202.164.205.148.49.13.668-.049'/%3e%3cpath%20d='M13.229%208.271a.482.482%200%200%200-.063-.745A9.46%209.46%200%200%200%208%206c-1.905%200-3.68.56-5.166%201.526a.48.48%200%200%200-.063.745.525.525%200%200%200%20.652.065A8.46%208.46%200%200%201%208%207a8.46%208.46%200%200%201%204.576%201.336c.206.132.48.108.653-.065m-2.183%202.183c.226-.226.185-.605-.1-.75A6.5%206.5%200%200%200%208%209c-1.06%200-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5%205.5%200%200%201%208%2010c.868%200%201.69.201%202.42.56.203.1.45.07.61-.091zM9.06%2012.44c.196-.196.198-.52-.04-.66A2%202%200%200%200%208%2011.5a2%202%200%200%200-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5%200%200%200%20.707%200l.707-.707z'/%3e%3c/svg%3e" alt="WiFi-icon" style="width: 25px; height: 20px;">
-        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='white'%20class='bi%20bi-battery-full'%20viewBox='0%200%2016%2016'%3e%3cpath%20d='M2%206h10v4H2z'/%3e%3cpath%20d='M2%204a2%202%200%200%200-2%202v4a2%202%200%200%200%202%202h10a2%202%200%200%200%202-2V6a2%202%200%200%200-2-2zm10%201a1%201%200%200%201%201%201v4a1%201%200%200%201-1%201H2a1%201%200%200%201-1-1V6a1%201%200%200%201%201-1zm4%203a1.5%201.5%200%200%201-1.5%201.5v-3A1.5%201.5%200%200%201%2016%208'/%3e%3c/svg%3e" alt="Battery-icon" style="width: 30px; height: 25px;">
-    </div>
+    <!-- HEADER -->
+<header class="app-header">
+  <div class="app-header__bar">
+    <button class="icon-btn" id="backBtn" aria-label="返回">
+      <!-- 內建 SVG；若用 Material Icons 可改成 <span class="material-symbols-outlined">arrow_back</span> -->
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h1 class="app-header__title">這些片子保證讓你嗨起來！</h1>
+    <div class="app-header__right"></div>
+  </div>
 </header>
+
     <h1 class="index-title">我是首頁</h1>
 
     <div class="card" style="width: 18rem">
@@ -25,7 +31,7 @@
         <h5 class="card-title">卡片元件</h5>
         <p class="card-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit,
-          iusto odio assumenda alias id nobis earum!
+          iusto odio assumenda alias id nobis earum!456
         </p>
       </div>
     </div>
@@ -75,8 +81,6 @@
       </div>
     </div>
 
-    <footer class="bg-dark">
-    <span class="bottom-item">　</span>
-</footer>
+    <footer class="footer">footer</footer>
   </body>
 </html>
