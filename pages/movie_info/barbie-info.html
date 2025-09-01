@@ -7,132 +7,212 @@
     <title>影片互動與資訊頁-興奮</title>
   </head>
   <body>
-    <!-- <%- include('./layout/header'); -%> -->
-
     <!-- Content -->
     <main>
-        <div class="bg-dark">
-            <!-- Banner -->
-            <div class="banner position-relative banner-border-radious">
-                <header class="header d-flex justify-content-between text-white">
-                    <span class="py-22">9:41</span>
-                    <div class="header-icon d-flex align-items-center">    
-                        <img src="/assets/images/Icon/reception-4.svg" alt="Signal-icon" style="width: 25px; height: 20px;">
-                        <img src="/assets/images/Icon/wifi.svg" alt="WiFi-icon" style="width: 25px; height: 20px;">
-                        <img src="/assets/images/Icon/battery-full.svg" alt="Battery-icon" style="width: 30px; height: 25px;">
-                    </div>
-                </header>
-                <img src="/assets/images/page-emotion-recommendation/Movie-Excite-1.jpg" alt="芭比 (Spirit in the Alley)" class="img-fluid mb-8">
-                <div>
-                    <button type="button" class="close-button" width="48px"><img src="/assets/images/Icon/Close.svg" alt="close-button"></button>
-                </div>
-                <div>
-                    <button type="button" class="play-button position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button"></button>
-                </div>
-                <span class="emotion-tag">85%興奮</span>
+      <div class="bg-dark">
+        <!-- Banner -->
+        <div class="banner position-relative banner-border-radious">
+          <header class="header d-flex justify-content-between text-white">
+            <span class="py-22">9:41</span>
+            <div class="header-icon d-flex align-items-center">
+              <img
+                src="/assets/images/Icon/reception-4.svg"
+                alt="Signal-icon"
+                style="width: 25px; height: 20px"
+              />
+              <img
+                src="/assets/images/Icon/wifi.svg"
+                alt="WiFi-icon"
+                style="width: 25px; height: 20px"
+              />
+              <img
+                src="/assets/images/Icon/battery-full.svg"
+                alt="Battery-icon"
+                style="width: 30px; height: 25px"
+              />
             </div>
-
-            <div class="container">
-                <!-- Movie-Intro -->
-                <section class="d-flex">
-                    <div class="d-flex align-items-center">    
-                        <span class="status-tag text-xs text-white me-2">0+</span>
-                        <span class="text-xs text-white me-2">95%契合</span>
-                        <div>
-                            <button type="button">
-                                <img src="/assets/images/Icon/Star.svg" width="16px" alt="Star-Icon">
-                            </button>
-                            <span class="text-xs text-white">6.8</span>
-                        </div>
-                    </div>
-                    <div class="ms-auto">
-                        <button type="button"><img src="/assets/images/Icon/Download.svg" alt="Download-Icon" class="p-12"></button>
-                        <button type="button"><img src="/assets/images/Icon/Plus.svg" alt="Plus-Icon" class="p-12 mx-2"></button>
-                        <button type="button"><img src="/assets/images/Icon/Send.svg" alt="Send-Icon" class="p-12"></button>
-                    </div>
-                </section>
-                
-                <section>
-                    <h1 class="h4 text-white mb-8">芭比 (Spirit in the Alley)</h1>
-                    <div class="text-xs text-neutral-300 mb-8">    
-                        <span class="bg-tag px-2">2022</span>
-                        <span class="mx-2">114分鐘</span>
-                        <span>奇幻冒險．歡樂喜劇</span>
-                    </div>
-                    <p class="text-xs text-white mb-8">生活在芭比樂園，就是身處一個完美地方過著完美的人生，除非你遇到全面性的存在危機，或者你剛好是肯尼。</p>
-                </section>
-
-                <!-- 演員與導演資訊 -->
-                <section class="mb-8">   
-                    <h2 class="h5 text-white py-11-5 mb-8">演員與導演資訊</h2>
-                    <div class="mb-8">    
-                        <span class="text-xs text-neutral-300 me-2">導演</span>
-                        <span class="text-xs text-neutral-300">葛莉塔潔薇</span>
-                    </div>
-                    <div class="d-flex overflow-auto">
-                        <div class="actor-card text-center">
-                            <a href="#"><img src="/assets/images/page-detail/Excite-1.jpg" class="card-img-top" alt="瑪格羅比"></a>
-                            <div>
-                                <a href="#"><h4 class="h5">瑪格羅比</h4></a>
-                                <h5 class="h6 text-neutral-300">芭比</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <a href="#"><img src="/assets/images/page-detail/Excite-2.jpg" class="card-img-top" alt="伊莎蕾"></a>
-                            <div>
-                                <a href="#"><h4 class="h5">伊莎蕾</h4></a>
-                                <h5 class="h6 text-neutral-300">芭比</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <a href="#"><img src="/assets/images/page-detail/Excite-3.jpg" class="card-img-top" alt="萊恩葛斯林"></a>
-                            <div>
-                                <a href="#"><h4 class="h5">萊恩葛斯林</h4></a>
-                                <h5 class="h6 text-neutral-300">肯尼</h5>
-                            </div>
-                        </div>
-                    
-                        <div class="actor-card text-center">
-                            <a href="#"><img src="/assets/images/page-detail/Excite-4.jpg" class="card-img-top" alt="劉思慕"></a>
-                            <div>
-                                <a href="#"><h4 class="h5">劉思慕</h4></a>
-                                <h5 class="h6 text-neutral-300">肯尼</h5>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 類似影片 -->
-                <section>    
-                    <h2 class="h5 text-white py-11-5">類似影片</h2>
-                    <div class="d-flex flex-nowrap overflow-auto pb-40">
-                        <div class="video-card">
-                            <a href="#"><img src="/assets/images/page-emotion-recommendation/Movie-Excite-12.jpg" class="card-img-top" alt="類似影片1"></a>
-                        </div>
-                        
-                        <div class="video-card">
-                            <a href="#"><img src="/assets/images/page-emotion-recommendation/Movie-Excite-3.jpg" class="card-img-top" alt="類似影片2"></a>
-                        </div>
-                        
-                        <div class="video-card">
-                            <a href="#"><img src="/assets/images/page-emotion-recommendation/Movie-Excite-11.jpg" class="card-img-top" alt="類似影片3"></a>
-                        </div>
-                        
-                        <div class="video-card">
-                            <a href="#"><img src="/assets/images/page-emotion-recommendation/Movie-Excite-10.jpg" class="card-img-top" alt="類似影片4"></a>
-                        </div>
-                        
-                    </div>
-                </section>
-            
-            </div>  
+          </header>
+          <img
+            src="/assets/images/page-emotion-recommendation/Movie-Excite-1.jpg"
+            alt="芭比 (Spirit in the Alley)"
+            class="img-fluid mb-8"
+          />
+          <div>
+            <button type="button" class="close-button" width="48px">
+              <img src="/assets/images/Icon/Close.svg" alt="close-button" />
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="play-button position-absolute top-50 start-50 translate-middle"
+            >
+              <img src="/assets/images/Icon/Play.svg" alt="play-button" />
+            </button>
+          </div>
+          <span class="emotion-tag">85%興奮</span>
         </div>
-        
-    </main>
 
-    
+        <div class="container">
+          <!-- Movie-Intro -->
+          <section class="d-flex">
+            <div class="d-flex align-items-center">
+              <span class="status-tag text-xs text-white me-2">0+</span>
+              <span class="text-xs text-white me-2">95%契合</span>
+              <div>
+                <button type="button">
+                  <img
+                    src="/assets/images/Icon/Star.svg"
+                    width="16px"
+                    alt="Star-Icon"
+                  />
+                </button>
+                <span class="text-xs text-white">6.8</span>
+              </div>
+            </div>
+            <div class="ms-auto">
+              <button type="button">
+                <img
+                  src="/assets/images/Icon/Download.svg"
+                  alt="Download-Icon"
+                  class="p-12"
+                />
+              </button>
+              <button type="button">
+                <img
+                  src="/assets/images/Icon/Plus.svg"
+                  alt="Plus-Icon"
+                  class="p-12 mx-2"
+                />
+              </button>
+              <button type="button">
+                <img
+                  src="/assets/images/Icon/Send.svg"
+                  alt="Send-Icon"
+                  class="p-12"
+                />
+              </button>
+            </div>
+          </section>
+
+          <section>
+            <h1 class="h4 text-white mb-8">芭比 (Spirit in the Alley)</h1>
+            <div class="text-xs text-neutral-300 mb-8">
+              <span class="bg-tag px-2">2022</span>
+              <span class="mx-2">114分鐘</span>
+              <span>奇幻冒險．歡樂喜劇</span>
+            </div>
+            <p class="text-xs text-white mb-8">
+              生活在芭比樂園，就是身處一個完美地方過著完美的人生，除非你遇到全面性的存在危機，或者你剛好是肯尼。
+            </p>
+          </section>
+
+          <!-- 演員與導演資訊 -->
+          <section class="mb-8">
+            <h2 class="h5 text-white py-11-5 mb-8">演員與導演資訊</h2>
+            <div class="mb-8">
+              <span class="text-xs text-neutral-300 me-2">導演</span>
+              <span class="text-xs text-neutral-300">葛莉塔潔薇</span>
+            </div>
+            <div class="d-flex overflow-auto">
+              <div class="actor-card text-center">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-detail/Excite-1.jpg"
+                    class="card-img-top"
+                    alt="瑪格羅比"
+                /></a>
+                <div>
+                  <a href="#"><h4 class="h5">瑪格羅比</h4></a>
+                  <h5 class="h6 text-neutral-300">芭比</h5>
+                </div>
+              </div>
+
+              <div class="actor-card text-center">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-detail/Excite-2.jpg"
+                    class="card-img-top"
+                    alt="伊莎蕾"
+                /></a>
+                <div>
+                  <a href="#"><h4 class="h5">伊莎蕾</h4></a>
+                  <h5 class="h6 text-neutral-300">芭比</h5>
+                </div>
+              </div>
+
+              <div class="actor-card text-center">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-detail/Excite-3.jpg"
+                    class="card-img-top"
+                    alt="萊恩葛斯林"
+                /></a>
+                <div>
+                  <a href="#"><h4 class="h5">萊恩葛斯林</h4></a>
+                  <h5 class="h6 text-neutral-300">肯尼</h5>
+                </div>
+              </div>
+
+              <div class="actor-card text-center">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-detail/Excite-4.jpg"
+                    class="card-img-top"
+                    alt="劉思慕"
+                /></a>
+                <div>
+                  <a href="#"><h4 class="h5">劉思慕</h4></a>
+                  <h5 class="h6 text-neutral-300">肯尼</h5>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 類似影片 -->
+          <section>
+            <h2 class="h5 text-white py-11-5">類似影片</h2>
+            <div class="d-flex flex-nowrap overflow-auto pb-40">
+              <div class="video-card">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-emotion-recommendation/Movie-Excite-12.jpg"
+                    class="card-img-top"
+                    alt="類似影片1"
+                /></a>
+              </div>
+
+              <div class="video-card">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-emotion-recommendation/Movie-Excite-3.jpg"
+                    class="card-img-top"
+                    alt="類似影片2"
+                /></a>
+              </div>
+
+              <div class="video-card">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-emotion-recommendation/Movie-Excite-11.jpg"
+                    class="card-img-top"
+                    alt="類似影片3"
+                /></a>
+              </div>
+
+              <div class="video-card">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-emotion-recommendation/Movie-Excite-10.jpg"
+                    class="card-img-top"
+                    alt="類似影片4"
+                /></a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
     <%- include('./layout/footer'); -%>
 

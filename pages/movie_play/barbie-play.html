@@ -7,145 +7,235 @@
     <title>影片播放頁-直式播放頁-播放狀態（興奮）</title>
   </head>
   <body>
-    <!-- <%- include('./layout/header'); -%> -->
-
     <!-- Content -->
     <main>
-        <header class="header d-flex justify-content-between text-white">
-            <span class="py-22">9:41</span>
-            <div class="header-icon d-flex align-items-center">    
-                <img src="/assets/images/Icon/reception-4.svg" alt="Signal-icon" style="width: 25px; height: 20px;">
-                <img src="/assets/images/Icon/wifi.svg" alt="WiFi-icon" style="width: 25px; height: 20px;">
-                <img src="/assets/images/Icon/battery-full.svg" alt="Battery-icon" style="width: 30px; height: 25px;">
-            </div>
-        </header>
-
-
-        <div class="bg-dark">
-            <!-- 影片 -->
-            <section>
-                <div class="d-flex justify-content-between pt-59">
-                    <button type="button"><img src="/assets/images/Icon/Left.svg" alt="back-icon" class="p-12"></button>
-                    <h1 class="h5 text-white py-11-5">
-                        影片播放頁
-                    </h1>
-                    <span class="fake-icon">　</span>
-                </div>
-            
-                <img src="/assets/images/page-play/Excite-1.jpg" alt="main-video-play" class="main-video-play">
-                <input type="range" min="0" max="100" value="0" class="timeline">
-            </section>
-
-            
-            <div class="container">
-                <section class="mb-3 my-3">
-                    <h2 class="h5 text-white mb-12">
-                        請問您對於此片有什麼感受？
-                    </h2>
-                    
-                    <div class="d-flex justify-content-between emo-active">
-                        <div class="emo-card">
-                            <button type="button"><img src="/assets/images/page-initial/Surprise.svg" alt="興奮" class="mb-1"></button>
-                            <div>
-                                <span class="text-white ">興奮</span>
-                            </div>
-                        </div>
-
-                        <div class="emo-card">
-                            <button type="button"><img src="/assets/images/page-initial/Serentiny.svg" alt="平和" class="mb-1"></button>
-                            <div>
-                                <span class="text-white ">平和</span>
-                            </div>
-                        </div>
-
-                        <div class="emo-card">
-                            <button type="button"><img src="/assets/images/page-initial/Grief.svg" alt="悲傷" class="mb-1"></button>
-                            <div>
-                                <span class="text-white ">悲傷</span>
-                            </div>
-                        </div>
-
-                        <div class="emo-card">
-                            <button type="button"><img src="/assets/images/page-initial/Rage.svg" alt="恐懼" class="mb-1 ml-6"></button>
-                            <div>
-                                <span class="text-white ">恐懼</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-
-                <section>
-                    <h2 class="h5 text-white py-11-5 mb-12">
-                        類似影片
-                    </h2>
-
-                    <div class="video-card-horizontal d-flex mb-12">
-                        <div class="position-relative">
-                            <a href="#"><img src="/assets/images/page-personal-detail/Video-happy-0.jpg" alt="五星主廚快餐車"></a>
-                            <!-- 缺圖 -->
-                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button-xs"></button>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <a href="#" class="text-md mb-1">五星主廚快餐車</a>
-                            <p class="text-xs">喜劇</p>
-                        </div>   
-                    </div>
-
-                    <div class="video-card-horizontal d-flex mb-12">
-                        <div class="position-relative">
-                            <a href="#"><img src="/assets/images/page-personal-detail/Video-happy-3.jpg" alt="寵物當家2"></a>
-                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button-xs"></button>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <a href="#" class="text-md mb-1">寵物當家2</a>
-                            <p class="text-xs">喜劇</p>
-                        </div>   
-                    </div>
-
-                    <div class="video-card-horizontal d-flex mb-12">
-                        <div class="position-relative">
-                            <a href="#"><img src="/assets/images/page-personal-detail/Video-happy-1.jpg" alt="高年級實習生"></a>
-                            <!-- 缺圖 -->
-                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button-xs"></button>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <a href="#" class="text-md mb-1">高年級實習生</a>
-                            <p class="text-xs">喜劇</p>
-                        </div>   
-                    </div>
-
-                    <div class="video-card-horizontal d-flex mb-12">
-                        <div class="position-relative">
-                            <a href="#"><img src="/assets/images/page-personal-detail/Video-happy-4.jpg" alt="活個精彩"></a>
-                            <!-- 缺圖 -->
-                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button-xs"></button>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <a href="#" class="text-md mb-1">活個精彩</a>
-                            <p class="text-xs">喜劇</p>
-                        </div>   
-                    </div>
-
-                    <div class="video-card-horizontal d-flex pb-6">
-                        <div class="position-relative">
-                            <a href="#"><img src="/assets/images/page-personal-detail/Video-happy-5.jpg" alt="樂來樂愛你"></a>
-                            <button type="button" class="play-button-xs position-absolute top-50 start-50 translate-middle"><img src="/assets/images/Icon/Play.svg" alt="play-button-xs"></button>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <a href="#" class="text-md mb-1">樂來樂愛你</a>
-                            <p class="text-xs">音樂歌劇</p>
-                        </div>   
-                    </div>
-                </section>
-            </div>
-
-            
-             
+      <header class="header d-flex justify-content-between text-white">
+        <span class="py-22">9:41</span>
+        <div class="header-icon d-flex align-items-center">
+          <img
+            src="/assets/images/Icon/reception-4.svg"
+            alt="Signal-icon"
+            style="width: 25px; height: 20px"
+          />
+          <img
+            src="/assets/images/Icon/wifi.svg"
+            alt="WiFi-icon"
+            style="width: 25px; height: 20px"
+          />
+          <img
+            src="/assets/images/Icon/battery-full.svg"
+            alt="Battery-icon"
+            style="width: 30px; height: 25px"
+          />
         </div>
-    </main>
+      </header>
 
-    
+      <div class="bg-dark">
+        <!-- 影片 -->
+        <section>
+          <div class="d-flex justify-content-between pt-59">
+            <button type="button">
+              <img
+                src="/assets/images/Icon/Left.svg"
+                alt="back-icon"
+                class="p-12"
+              />
+            </button>
+            <h1 class="h5 text-white py-11-5">影片播放頁</h1>
+            <span class="fake-icon">　</span>
+          </div>
+
+          <img
+            src="/assets/images/page-play/Excite-1.jpg"
+            alt="main-video-play"
+            class="main-video-play"
+          />
+          <input type="range" min="0" max="100" value="0" class="timeline" />
+        </section>
+
+        <div class="container">
+          <section class="mb-3 my-3">
+            <h2 class="h5 text-white mb-12">請問您對於此片有什麼感受？</h2>
+
+            <div class="d-flex justify-content-between emo-active">
+              <div class="emo-card">
+                <button type="button">
+                  <img
+                    src="/assets/images/page-initial/Surprise.svg"
+                    alt="興奮"
+                    class="mb-1"
+                  />
+                </button>
+                <div>
+                  <span class="text-white">興奮</span>
+                </div>
+              </div>
+
+              <div class="emo-card">
+                <button type="button">
+                  <img
+                    src="/assets/images/page-initial/Serentiny.svg"
+                    alt="平和"
+                    class="mb-1"
+                  />
+                </button>
+                <div>
+                  <span class="text-white">平和</span>
+                </div>
+              </div>
+
+              <div class="emo-card">
+                <button type="button">
+                  <img
+                    src="/assets/images/page-initial/Grief.svg"
+                    alt="悲傷"
+                    class="mb-1"
+                  />
+                </button>
+                <div>
+                  <span class="text-white">悲傷</span>
+                </div>
+              </div>
+
+              <div class="emo-card">
+                <button type="button">
+                  <img
+                    src="/assets/images/page-initial/Rage.svg"
+                    alt="恐懼"
+                    class="mb-1 ml-6"
+                  />
+                </button>
+                <div>
+                  <span class="text-white">恐懼</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="h5 text-white py-11-5 mb-12">類似影片</h2>
+
+            <div class="video-card-horizontal d-flex mb-12">
+              <div class="position-relative">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-personal-detail/Video-happy-0.jpg"
+                    alt="五星主廚快餐車"
+                /></a>
+                <!-- 缺圖 -->
+                <button
+                  type="button"
+                  class="play-button-xs position-absolute top-50 start-50 translate-middle"
+                >
+                  <img
+                    src="/assets/images/Icon/Play.svg"
+                    alt="play-button-xs"
+                  />
+                </button>
+              </div>
+              <div class="d-flex flex-column justify-content-center ms-3">
+                <a href="#" class="text-md mb-1">五星主廚快餐車</a>
+                <p class="text-xs">喜劇</p>
+              </div>
+            </div>
+
+            <div class="video-card-horizontal d-flex mb-12">
+              <div class="position-relative">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-personal-detail/Video-happy-3.jpg"
+                    alt="寵物當家2"
+                /></a>
+                <button
+                  type="button"
+                  class="play-button-xs position-absolute top-50 start-50 translate-middle"
+                >
+                  <img
+                    src="/assets/images/Icon/Play.svg"
+                    alt="play-button-xs"
+                  />
+                </button>
+              </div>
+              <div class="d-flex flex-column justify-content-center ms-3">
+                <a href="#" class="text-md mb-1">寵物當家2</a>
+                <p class="text-xs">喜劇</p>
+              </div>
+            </div>
+
+            <div class="video-card-horizontal d-flex mb-12">
+              <div class="position-relative">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-personal-detail/Video-happy-1.jpg"
+                    alt="高年級實習生"
+                /></a>
+                <!-- 缺圖 -->
+                <button
+                  type="button"
+                  class="play-button-xs position-absolute top-50 start-50 translate-middle"
+                >
+                  <img
+                    src="/assets/images/Icon/Play.svg"
+                    alt="play-button-xs"
+                  />
+                </button>
+              </div>
+              <div class="d-flex flex-column justify-content-center ms-3">
+                <a href="#" class="text-md mb-1">高年級實習生</a>
+                <p class="text-xs">喜劇</p>
+              </div>
+            </div>
+
+            <div class="video-card-horizontal d-flex mb-12">
+              <div class="position-relative">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-personal-detail/Video-happy-4.jpg"
+                    alt="活個精彩"
+                /></a>
+                <!-- 缺圖 -->
+                <button
+                  type="button"
+                  class="play-button-xs position-absolute top-50 start-50 translate-middle"
+                >
+                  <img
+                    src="/assets/images/Icon/Play.svg"
+                    alt="play-button-xs"
+                  />
+                </button>
+              </div>
+              <div class="d-flex flex-column justify-content-center ms-3">
+                <a href="#" class="text-md mb-1">活個精彩</a>
+                <p class="text-xs">喜劇</p>
+              </div>
+            </div>
+
+            <div class="video-card-horizontal d-flex pb-6">
+              <div class="position-relative">
+                <a href="#"
+                  ><img
+                    src="/assets/images/page-personal-detail/Video-happy-5.jpg"
+                    alt="樂來樂愛你"
+                /></a>
+                <button
+                  type="button"
+                  class="play-button-xs position-absolute top-50 start-50 translate-middle"
+                >
+                  <img
+                    src="/assets/images/Icon/Play.svg"
+                    alt="play-button-xs"
+                  />
+                </button>
+              </div>
+              <div class="d-flex flex-column justify-content-center ms-3">
+                <a href="#" class="text-md mb-1">樂來樂愛你</a>
+                <p class="text-xs">音樂歌劇</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
     <%- include('./layout/footer'); -%>
 
