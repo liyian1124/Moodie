@@ -1,0 +1,119 @@
+/* excitement.scss */
+.page-excitement {
+  /* === 頁面背景（不要包 body）=== */
+  background: url(https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg) no-repeat
+              center center fixed;
+  background-size: cover;
+  min-height: 100vh; /* 讓背景至少鋪滿視窗 */
+
+  /* === 內容頁框 === */
+  .page {
+    display: block;              /* 不用 flex，避免被置中 */
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+
+  /* === 玻璃感置底 NAV（對齊你的 HTML 類名）=== */
+  .glass-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+
+    width: min(640px, 100vw);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    height: calc(64px + env(safe-area-inset-bottom));
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px 20px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .glass-nav__item {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 4px;
+    transition: color 0.3s ease;
+
+    i {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+  .glass-nav__item.is-active { font-weight: 700; color: #fff; }
+  .glass-nav__item:hover { color: #ffcc70; }
+
+  /* === 內容層 === */
+  .content {
+    position: relative;
+    z-index: 1;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* 預留 nav 高度 */
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
+  }
+
+  /* === 如果還有舊的 gallery 結構 === */
+  .gallery-page {
+    position: relative;
+
+    .bg-scroll img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .overlay-content {
+      position: absolute;
+      top: 0; left: 0; width: 100%;
+      z-index: 10;
+    }
+  }
+
+  /* === 按鈕 === */
+  .btn { 
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .25s ease;
+  }
+  .btn-glass {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .btn-glass:hover { background: rgba(255,255,255,.15); }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #7b2ff7, #3b82f6);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(123,47,247,.4);
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #9d4dff, #5793ff);
+    box-shadow: 0 6px 20px rgba(123,47,247,.55);
+  }
+
+  /* 工具類 */
+  .fs-10 { font-size: 16px; }
+}
