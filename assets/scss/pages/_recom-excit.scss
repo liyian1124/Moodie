@@ -1,0 +1,66 @@
+  
+  .recom-excit{
+  body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      /* 紫到藍的背景 */
+      background: linear-gradient(to right, #7007E7, #347DFD);
+      font-family: sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 0;
+      margin: 20px;
+
+      /* Glassmorphism 核心 */
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-item {
+      color: white;
+      text-align: center;
+      font-size: 13px;
+      cursor: pointer;
+      flex: 1;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .nav-item.active {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .nav-item:hover {
+      color: #ffcc70;
+    }
+
+.pill-dark{
+  background-color: #000000;
+  color: white;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+
+  }
