@@ -446,7 +446,9 @@ $spacers: (
 $position-values: (
   0: 0,
   50: 50%,
-  100: 100%
+  100: 100%,
+
+  10: -10%
 ) !default;
 // scss-docs-end position-map
 

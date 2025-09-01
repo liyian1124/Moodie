@@ -9,59 +9,86 @@
   <body>
     <%- include('./layout/header'); -%>
 
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit,
-          iusto odio assumenda alias id nobis earum!
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal 按鈕 -->
-    <button
-      type="button"
-      class="btn btn-KV"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <div class="bg-image-index text-white">
+      <div class="container vh-100 d-flex flex-column justify-content-center">
+        <div class="text-center mb-5">
+          <h1 class="h4 fw-bold lh-base">嗨！今天的心情如何？</h1>
+          <p class="h6 lh-base fw-normal">
+            輕鬆點，Moodie 為你挑選最對味的影片
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-5">
+            <a href="">
+              <div class="position-relative">
+                <img
+                  class="w-100"
+                  src="/assets/images/page-initial/Surprise.svg"
+                  alt=""
+                />
+                <div class="position-absolute top-10 start-0 w-100">
+                  <img
+                    class="w-100"
+                    src="/assets/images/page-initial/Start_Card.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </a>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              關閉
-            </button>
-            <button type="button" class="btn btn-primary">確定</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae dolores quae illo, sunt harum vel recusandae? Quod autem voluptatum quis. Ipsum, illo sequi cupiditate natus totam sit dolorem repellat!</p>
+          <div class="col-6 mb-5">
+            <a href="">
+              <div class="position-relative">
+                <img
+                  class="w-100"
+                  src="/assets/images/page-initial/Serentiny.svg"
+                  alt=""
+                />
+                <div class="position-absolute top-10 start-0 w-100">
+                  <img
+                    class="w-100"
+                    src="/assets/images/page-initial/Start_Card.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="">
+              <div class="position-relative">
+                <img
+                  class="w-100"
+                  src="/assets/images/page-initial/Rage.svg"
+                  alt=""
+                />
+                <div class="position-absolute top-10 start-0 w-100">
+                  <img
+                    class="w-100"
+                    src="/assets/images/page-initial/Start_Card.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="">
+              <div class="position-relative">
+                <img
+                  class="w-100"
+                  src="/assets/images/page-initial/Grief.svg"
+                  alt=""
+                />
+                <div class="position-absolute top-10 start-0 w-100">
+                  <img
+                    class="w-100"
+                    src="/assets/images/page-initial/Start_Card.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
