@@ -1,14 +1,16 @@
   
-  .recom-excit{
+  .recom-excit {
   body {
       margin: 0;
-      height: 100vh;
+      width: 393px;
+      height: 815px;
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      /* 紫到藍的背景 */
-      background: linear-gradient(to right, #7007E7, #347DFD);
-      font-family: sans-serif;
+      background: url("https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg")
+       no-repeat center top;
+      background-size: 393px 815px; // 🔒 固定像素，不會 cover
+
     }
 
     .navbar {
@@ -28,6 +30,8 @@
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    
+    
     }
 
     .nav-item {
@@ -64,3 +68,31 @@
 
 
   }
+
+
+  .app-screen {
+  position: relative;        /* 建立定位上下文 */
+  isolation: isolate;        /* 建立新的層疊上下文 */
+  width: 393px;
+  height: 815px;
+  border-radius: 55.47px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* 背景圖要絕對定位，才不會「佔版面」 */
+.bg-img {
+  position: absolute;        /* ⬅️ 關鍵 */
+  inset: 0;                  /* 填滿容器 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* 背景鋪滿 */
+  z-index: 0;                /* 永遠在最底 */
+  pointer-events: none;      /* 不擋住點擊 */
+}
+
+/* 其他內容一律在背景之上 */
+.app-screen > *:not(.bg-img) {
+  position: relative;        /* 生成新層級 */
+  z-index: 1;                /* 永遠比背景高 */
+}

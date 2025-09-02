@@ -1,14 +1,14 @@
 /* excitement.scss */
 .page-excitement {
-  /* === 頁面背景（不要包 body）=== */
-  background: url(https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg) no-repeat
-              center center fixed;
-  background-size: cover;
-  min-height: 100vh; /* 讓背景至少鋪滿視窗 */
+  background: url("https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg")
+    no-repeat center top;
+  background-size: 393px 815px; // 🔒 固定像素，不會 cover
+  width: 393px;
+  height: 815px;
 
   /* === 內容頁框 === */
   .page {
-    display: block;              /* 不用 flex，避免被置中 */
+    display: block; /* 不用 flex，避免被置中 */
     min-height: 100vh;
     padding-top: 60px;
   }
@@ -57,16 +57,23 @@
       line-height: 1;
     }
   }
-  .glass-nav__item.is-active { font-weight: 700; color: #fff; }
-  .glass-nav__item:hover { color: #ffcc70; }
+  .glass-nav__item.is-active {
+    font-weight: 700;
+    color: #fff;
+  }
+  .glass-nav__item:hover {
+    color: #ffcc70;
+  }
 
   /* === 內容層 === */
   .content {
     position: relative;
     z-index: 1;
-    padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* 預留 nav 高度 */
+    padding-bottom: calc(
+      80px + env(safe-area-inset-bottom)
+    ); /* 預留 nav 高度 */
     color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 
   /* === 如果還有舊的 gallery 結構 === */
@@ -80,40 +87,220 @@
     }
     .overlay-content {
       position: absolute;
-      top: 0; left: 0; width: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 10;
     }
   }
 
   /* === 按鈕 === */
-  .btn { 
+  .btn {
     border: none;
     font-weight: 700;
     font-size: 16px;
     padding: 12px 28px;
     border-radius: 12px;
     cursor: pointer;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
   }
   .btn-glass {
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
-  .btn-glass:hover { background: rgba(255,255,255,.15); }
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
 
   .btn-gradient {
     background: linear-gradient(90deg, #7b2ff7, #3b82f6);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(123,47,247,.4);
+    box-shadow: 0 4px 16px rgba(123, 47, 247, 0.4);
   }
   .btn-gradient:hover {
     background: linear-gradient(90deg, #9d4dff, #5793ff);
-    box-shadow: 0 6px 20px rgba(123,47,247,.55);
+    box-shadow: 0 6px 20px rgba(123, 47, 247, 0.55);
   }
 
   /* 工具類 */
-  .fs-10 { font-size: 16px; }
+  .fs-10 {
+    font-size: 16px;
+  }
+}
+
+$phone-w: 431px; // 外殼寬度
+$phone-h: 888px; // 外殼高度
+$screen-w: 393px; // 螢幕寬度
+$screen-h: 815px; // 螢幕高度
+
+.phone-frame {
+  position: relative;
+  width: 431px;
+  height: 888px;
+  background: #000; // 這裡填黑，外框背後也不會露白
+  // background-color: #0d1b2a; // 和外面背景一致，避免露黑邊
+
+  border-radius: 61px;
+}
+
+.app-screen {
+  position: absolute;
+  top: 36.5px;
+  left: 19px;
+  width: 393px;
+  height: 815px;
+  overflow: auto; // 內容可以在螢幕區域內滾動
+  border-radius: 55.47px;
+  background: #000;
+}
+.phone-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.frame-outline {
+  stroke: #000;
+  stroke-width: 0; // 視需求調整
+  fill: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; // 垂直置中（可選）
+  justify-content: center; // 水平置中
+  background-color: #0d1b2a; // 🔑 這裡設你想要的底色
+}
+
+.phone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.phone-frame {
+  position: relative;
+  width: 431px; // 外殼寬
+  height: 888px; // 外殼高
+}
+
+.phone-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.app-screen {
+  position: absolute;
+  top: 36.5px;
+  left: 19px;
+  width: 393px;
+  height: 815px;
+  overflow: auto;
+  border-radius: 55.47px;
+  background: #000;
+  overflow-y: scroll; // 保留滾動
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE, Edge
+}
+
+.app-screen::-webkit-scrollbar {
+  display: none; // Chrome, Safari
+}
+
+.glass-nav {
+  position: absolute; // 一律別用 fixed
+  left: 50%; // 幾何置中
+  transform: translateX(-50%);
+  bottom: 12px;
+
+  width: min(356px, calc(100% - 24px)); // 不超出螢幕，左右各留 12px
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 你的樣式（圓角/陰影…） */
+}
+
+// --- 尺寸變數（你的數字） ---
+$shell-w: 431px;
+$shell-h: 888px;
+$screen-w: 393px;
+$screen-h: 815px;
+$inset-x: calc(($shell-w - $screen-w) / 2); // 19px
+$inset-y: calc(($shell-h - $screen-h) / 2); // 36.5px
+
+$nav-h: 60px; // 你的 glass-nav 高度
+$nav-gap: 12px; // nav 與螢幕邊緣間距
+$indicator-w: 134px; // Home indicator 寬
+$indicator-h: 5px; // 高
+$indicator-gap: 8px; // indicator 距離螢幕底的距離
+
+.phone-frame {
+  position: relative;
+  width: $shell-w;
+  height: $shell-h;
+}
+
+.app-screen {
+  position: absolute;
+  top: $inset-y;
+  left: $inset-x;
+  width: $screen-w;
+  height: $screen-h;
+  border-radius: 55.47px;
+  overflow-y: auto;
+  background: #000;
+  // 預留底部空間給 nav + indicator，避免內容被蓋住
+  padding-bottom: calc($nav-h + $nav-gap * 2 + $indicator-h + $indicator-gap);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.home-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc($inset-y + $indicator-gap); // 貼螢幕底部之上
+  width: $indicator-w;
+  height: $indicator-h;
+  z-index: 16;
+  border-radius: $indicator-h * 2;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.55)
+  );
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(255, 255, 255, 0.25) inset;
+  pointer-events: none; // 不擋互動
+}
+
+.phone-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+//完全禁止垂直滾動
+.app-screen {
+  overflow-y: hidden;
 }

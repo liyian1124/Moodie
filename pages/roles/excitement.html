@@ -18,7 +18,10 @@
     />
   </head>
   <body>
-    <nav class="glass-nav" aria-label="主選單">
+
+  <div class="phone-container">
+    <div class="phone-frame">
+          <nav class="glass-nav mb-5" aria-label="主選單">
       <a class="glass-nav__item is-active" href="#">
         <i class="bi bi-house-door"></i><span>首頁</span>
       </a>
@@ -35,9 +38,13 @@
         <i class="bi bi-person"></i><span>帳戶</span>
       </a>
     </nav>
+    <div class="home-indicator" aria-hidden="true"></div>
+
+      <div class="app-screen">
+
 
     <body>
-<div class="page-excitement">  <!-- 整頁容器 -->
+<div class="page-excitement ">  <!-- 整頁容器 -->
       <div class="page align-items-start">
         <!-- 固定背景層（整頁鋪滿） -->
         <div class="bg-fixed" aria-hidden="true"></div>
@@ -91,7 +98,16 @@
         </div>
       </div>
 </div>
+</div>
 
+  <svg class="phone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 431 888">
+    <!-- 你的外框 path -->
+    <rect x="0" y="0" width="431" height="888" rx="40" ry="40"
+          class="frame-outline"/>
+  </svg>
+
+</div>
+</div>
       <script type="module" src="/main.js"></script>
     </body>
 

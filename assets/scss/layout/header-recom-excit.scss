@@ -1,41 +1,65 @@
-:root{ --header-h:80px; }
+:root {
+  --header-h: 80px;
+}
 
-.app-header{
-  position: sticky; top:0; z-index:1000;
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   /* 黑色半透明 + 模糊，貼近你的設計 */
-  background: rgba(0,0,0,.9);
-  color:#fff;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
   backdrop-filter: saturate(160%) blur(8px);
   /* iOS 安全區 */
   padding-top: max(env(safe-area-inset-top), 8px);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* 三欄：48px / 1fr / 48px，確保標題在中間不被返回鈕影響 */
-.app-header__bar{
+.app-header__bar {
   height: var(--header-h);
   display: grid;
   grid-template-columns: 48px 1fr 48px;
   align-items: center;
 }
 
-.icon-btn{
-  width:48px; height:48px;
-  display:flex; align-items:center; justify-content:center;
-  background:transparent; border:0; color:#fff; cursor:pointer;
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
 }
 
-.app-header__title{
-  margin:0; padding:0 8px;
-  font-size:16px; font-weight:800; text-align:center;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-}
-
-//.app-header__right // 右側預留：之後要放分享/更多都可丟這裡
-
-
-@media (min-width:373px){
+@media (min-width: 373px) {
   .fs-md-6 {
-  font-size: 10px;
- }
+    font-size: 10px;
+  }
 }
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右分散 */
+}
+
+.app-header__bar {
+  display: flex; /* ⬅️ 讓子元素橫向排列 */
+  align-items: center; /* 垂直置中 */
+  justify-content: flex-start; /* 靠左對齊 */
+  gap: 8px; /* 箭頭和文字之間的間距 */
+  height: 48px; /* 跟你 DevTools 一樣高 */
+  padding: 0 12px; /* 左右內距 */
+}
+
+.app-header__bar h1 {
+  font-size: 16px;
+  margin: 0; /* 清掉預設 margin */
+  line-height: 1; /* 保持文字緊貼 */
+}
+
+

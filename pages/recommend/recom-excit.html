@@ -13,36 +13,49 @@
 
 <body>
 
-  <%- include('./layout/header-recom-excit'); -%>
+
 
 <!-- 記得引入 Bootstrap Icons 的 CSS（CDN 或你自己的打包） -->
 
 
 <!-- 可選：整頁背景 -->
 
-<nav class="glass-nav" aria-label="主選單">
-  <a class="glass-nav__item is-active" href="#">
-    <i class="bi bi-house-door"></i><span>首頁</span>
-  </a>
-  <a class="glass-nav__item" href="recom-excit.html">
-    <i class="bi bi-heart"></i><span>情緒片單</span>
-  </a>
-  <a class="glass-nav__item" href="#">
-    <i class="bi bi-search"></i><span>搜尋</span>
-  </a>
-  <a class="glass-nav__item" href="#">
-    <i class="bi bi-bookmark-dash"></i><span>個人片單</span>
-  </a>
-  <a class="glass-nav__item" href="#">
-    <i class="bi bi-person"></i><span>帳戶</span>
-  </a>
-</nav>
+  <div class="phone-container ">
+    
+    <div class="phone-frame ">
+      
+          <nav class="glass-nav mb-5 " aria-label="主選單">
+      <a class="glass-nav__item is-active" href="#">
+        <i class="bi bi-house-door"></i><span>首頁</span>
+      </a>
+      <a class="glass-nav__item" href="recom-excit.html">
+        <i class="bi bi-heart"></i><span>情緒片單</span>
+      </a>
+      <a class="glass-nav__item" href="#">
+        <i class="bi bi-search"></i><span>搜尋</span>
+      </a>
+      <a class="glass-nav__item" href="#">
+        <i class="bi bi-bookmark-dash"></i><span>個人片單</span>
+      </a>
+      <a class="glass-nav__item" href="#">
+        <i class="bi bi-person"></i><span>帳戶</span>
+      </a>
+    </nav>
+    <div class="home-indicator " aria-hidden="true"></div>
 
-<div class="gallery-page">
+      <div class="app-screen">
+        <!-- <img class="bg-img" 
+         src="https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg" 
+         alt="背景圖">-->
+<div >  <%- include('./layout/header-recom-excit'); -%></div>
+    
+
+
+<div class="gallery-page ">
   <!-- 背景：可直向滾動長圖（捲軸隱藏） -->
-  <div class="bg-scroll" aria-hidden="true">
+  <!--<div class="bg-scroll" aria-hidden="true">
     <img src="https://images.plurk.com/mlW6N3VhDYayt1Ga8ChNk.jpg" alt="">
-  </div>
+  </div>-->
 
   <!-- 前景：Swiper -->
   <section class="stage ">
@@ -110,36 +123,14 @@
           data-match="95%契合"
           data-tags="奇幻冒險・歡樂喜劇"><img class="slide-img" src="/assets/images/page-emotion-recommendation/Movie-Excite-3.jpg" alt="圖6" ></div>
         </div>
-        <div class="swiper-pagination"></div>
-        <section class="stage">
-  <div class="stage__wrap">
-    <div class="swiper myCoverflow">
-      <!-- ...你的 slides... -->
-      <div class="swiper-pagination"></div>
-    </div>
+        
 
-    <!-- 兩個 CTA 按鈕 -->
-    <div class="cta-bar">
-      <button type="button" class="btn btn--ghost"  data-retry>再次捕捉感覺</button>
-      <button type="button" class="btn btn--primary" data-addlist>＋ 立即加入片單</button>
-    </div>
-  </div>
-</section>
 
       </div>
     </div>
   </section>
 
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-<button type="button">再次捕捉感覺</button>
-<button type="button"><i class="bi bi-plus-lg"></i>立即加入片單</button>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- Modal：點中間圖開啟 -->
 <div id="galleryModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -156,7 +147,7 @@
 
 
 
-
+</div></div>
 
 <script>
   document.querySelectorAll('.glass-nav__item').forEach(a=>{
